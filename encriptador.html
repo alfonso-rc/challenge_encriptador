@@ -8,25 +8,44 @@
 	</head>
 	<body>
 		<header>
-			<img src="/encriptador/Logo.png" alt="Logo alura" />
+			<img src="./encriptador/Logo.png" alt="Logo alura" />
 		</header>
-		<section>
-			<textarea type="text" placeholder="Ingrese el texto aquí"></textarea>
 
-			<p>
-				<img src="/encriptador/infoIcon.svg" alt="info" /> Solo letras minusculas y sin
-				acentos
-			</p>
-			<button>Encriptar</button>
-			<button>Desencripar</button>
+		<section>
+			<textarea id="texto" name="texto" placeholder="Ingrese el texto aquí"></textarea>
+
+			<p><img src="./encriptador/infoIcon.svg" alt="info" /> Solo letras minusculas y sin acentos</p>
+			<!--                             aquí    -->
+			<button type="button" onclick="textareay()">Encriptar</button>
+			<button type="button" id="desencriptar">Desencriptar</button>
 		</section>
 
 		<section>
-			<img src="/encriptador/Muñeco.jpg" />
+			<img src="./encriptador/Muñeco.jpg" />
 			<strong>Ningun mensaje fue encontrado</strong>
 			<p>Ingrese el texto que desees encriptar o desencriptar</p>
 			<button>Copiar</button>
 		</section>
+
+		<script>
+			const keys = {
+				a: "ai",
+				e: "enter",
+				i: "imes",
+				o: "ober",
+				u: "ufat",
+			}
+
+			function textareay() {
+				const texto = document.getElementById("texto").value;
+				document.getElementById("texto").value = "";
+				document.getElementById("texto").focus() = "";
+			}
+
+			/* var button = document.querySelector("button");
+			button.onclick = textareay; */ //Puedo usar estas 2 lineas para ejecutar el boton ó usar el conclick aya arriba desde el html.
+		</script>
+
 		<footer>
 			<p>hecho por Alfonso Rosas C</p>
 		</footer>

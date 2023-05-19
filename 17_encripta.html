@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Encriptación y Desencriptación</title>
+	</head>
+	<body>
+		<h1>Encriptación y Desencriptación</h1>
+
+		<label>
+			Texto:
+			<textarea id="input" rows="5" cols="50"></textarea>
+		</label>
+
+		<br /><br />
+
+		<button onclick="encryptText()">Encriptar</button>
+		<button onclick="decryptText()">Desencriptar</button>
+
+		<br /><br />
+
+		<label>
+			Resultado:
+			<textarea id="output" rows="5" cols="50" readonly></textarea>
+		</label>
+
+		<br /><br />
+
+		<button onclick="copy()">Copiar</button>
+
+		<script>
+			const keys = {
+				a: "ai",
+				e: "enter",
+				i: "imes",
+				o: "ober",
+				u: "ufat",
+			};
+
+			function encryptText() {
+				const input = document.getElementById("input").value;
+				const output = encrypt(input);
+				document.getElementById("output").value = output;
+			}
+
+			function decryptText() {
+				const input = document.getElementById("input").value;
+				const output = decrypt(input);
+				document.getElementById("output").value = output;
+			}
+
+			function encrypt(text) {
+				/* const mapping = {
+					e: "enter",
+					i: "imes",
+					a: "ai",
+					o: "ober",
+					u: "ufat",
+				}; */
+
+				let result = "";
+
+				for (let i = 0; i < text.length; i++) {
+					const char = text.charAt(i);
+
+					if (keys[char]) {
+						result += keys[char];
+					} else {
+						result += char;
+					}
+				}
+
+				return result;
+			}
+
+			function decrypt(text) {
+				const keysArray = Object.entries(keys);
+				let result = text;
+				keysArray.forEach(([key, value]) => {
+					const regex = new RegExp(value, "g");
+					result = result.replace(regex, key);
+				});
+				return result;
+			}
+
+			function copy() {
+				const output = document.getElementById("output");
+
+				output.select();
+				output.setSelectionRange(0, 99999);
+
+				document.execCommand("copy");
+			}
+		</script>
+	</body>
+</html>
