@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="style2.css" />
 		<script src="proceso.js"></script>
 
 		<meta charset="UTF-8" />
@@ -14,21 +14,23 @@
 			<img class="imglogo" src="encriptador/Logo.png" />
 		</header>
 		<main>
-			<section>
-				<textarea id="input" placeholder="Ingrese el texto aquí" rows="16" cols="69"></textarea>
-				<p class="info"><img src="encriptador/infoIcon.svg" alt="info" /> Solo letras minúsculas y sin acentos</p>
+			<section class="parte1">
+				<textarea id="input" placeholder="Ingrese el texto aquí"></textarea>
+				<p class="info">
+					<img src="encriptador/infoIcon.svg" alt="info" />
+					Solo letras minúsculas y sin acentos
+				</p>
+
+				<button id="btnEncrypt" onclick="encryptText()">Encriptar</button>
+				<button id="btnDecrypt" onclick="decryptText()">Desencriptar</button>
 			</section>
-			<section>
+
+			<section class="parte2">
 				<div class="result">
 					<img src="encriptador/Muñeco.jpg" />
 					<p class="ninguno">Ningún mensaje fue encontrado</p>
 					<p class="ingresa-texto">Ingresa el texto que desees encriptar o desencriptar.</p>
 				</div>
-			</section>
-
-			<section>
-				<button id="btnEncrypt" onclick="encryptText()">Encriptar</button>
-				<button id="btnDecrypt" onclick="decryptText()">Desencriptar</button>
 			</section>
 		</main>
 		<footer>

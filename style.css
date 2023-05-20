@@ -1,6 +1,7 @@
 body {
 	background: #e2e7f4;
-	width: 1040px;
+	width: 940px;
+	font-family: Tahoma, sans-serif;
 }
 
 .imglogo {
@@ -13,25 +14,29 @@ textarea::placeholder {
 	font-size: 30px;
 }
 textarea {
+	width: 100%;
 	color: #0a3871;
 	font-size: 30px;
 	margin: 50px 135px;
 	background: none;
 	border: none;
 }
+textarea:focus {
+	outline: none; /* quita el borde cuando das clic dentro del textarea*/
+}
 
 .info {
-	position: relative;
+	/* 	position: relative;
 	left: 8rem;
-	bottom: 3rem;
+	bottom: 3rem; */
 	color: rgb(47, 47, 47);
-	font-size: 18px;
+	font-size: 16px;
 }
 #btnEncrypt {
-	position: relative;
+	/* position: relative;
 	left: 8rem;
-	bottom: 2.5rem;
-	width: 55%;
+	bottom: 2.5rem; */
+	width: 100%;
 	padding: 18px;
 	font-size: 18px;
 	color: white;
@@ -39,11 +44,16 @@ textarea {
 	background-color: #0a3871;
 	border: 1px solid white;
 }
+#btnEncrypt:hover {
+	background-color: #c1c3c3;
+	color: #0a3871;
+	border: solid #0a3871;
+}
 #btnDecrypt {
-	position: relative;
+	/* 
 	left: 45rem;
-	bottom: 6.2rem;
-	width: 55%;
+	bottom: 6.2rem; */
+	width: 100%;
 	padding: 18px;
 	font-size: 18px;
 	color: #0a3871;
@@ -51,10 +61,21 @@ textarea {
 	background-color: white;
 	border: 1px solid #0a3871;
 }
-.result {
-	position: absolute;
-	left: 88.5rem;
-	top: 2.5rem;
+#btnDecrypt:hover {
+	background-color: #c1c3c3;
+	color: #0a3871;
+	border: solid #0a3871;
+}
+.parte1 {
+	float: left;
+	width: 50%;
+}
+.parte2 {
+	float: left;
+	width: 50%;
+
+	display: flex;
+	flex-wrap: wrap;
 	width: 21%;
 	height: 86%;
 	border: solid;
@@ -65,18 +86,19 @@ textarea {
 	padding: 25px;
 }
 .result img {
-	position: relative;
-	top: 10rem;
+	/* position: relative;
+	top: 10rem; */
 }
 .ninguno {
-	position: relative;
-	top: 10rem;
-	font-size: 30px;
+	/* position: relative;
+	top: 10rem; */
+	font-size: 22px;
+	font-weight: 550;
 }
 .ingresa-texto {
-	position: relative;
-	top: 10rem;
-	font-size: 20px;
+	/* position: relative;
+	top: 10rem; */
+	font-size: 17px;
 }
 
 footer {
@@ -92,4 +114,41 @@ footer p {
 }
 footer span {
 	font-weight: 700;
+}
+
+@media screen and (max-width: 480px) {
+	body {
+		width: 480px;
+	}
+	.imglogo {
+		left: 0rem;
+	}
+	textarea {
+		position: relative;
+		font-size: 11px;
+		width: 100%;
+		height: 25rem;
+		margin: 60px 20px;
+		letter-spacing: -2px;
+		align-items: center;
+	}
+	.info {
+		left: 1rem;
+	}
+	#btnEncrypt {
+		display: block;
+		position: relative;
+		left: auto;
+		width: 80%;
+	}
+	#btnDecrypt {
+		position: relative;
+		left: auto;
+		bottom: -2px;
+		width: 80%;
+	}
+	.result {
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
