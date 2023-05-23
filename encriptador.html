@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<link rel="stylesheet" href="style2.css" />
+		<link rel="stylesheet" href="style.css" />
 		<script src="proceso.js"></script>
 
 		<meta charset="UTF-8" />
@@ -26,11 +26,13 @@
 			</section>
 
 			<section class="parte2">
-				<div class="result">
+				<div id="result" class="result">
 					<img src="encriptador/Muñeco.jpg" />
 					<p class="ninguno">Ningún mensaje fue encontrado</p>
 					<p class="ingresa-texto">Ingresa el texto que desees encriptar o desencriptar.</p>
 				</div>
+				<textarea class="textresult" id="output" readonly></textarea>
+				<button id="btncopy" onclick="copy()">Copiar</button>
 			</section>
 		</main>
 		<footer>
